@@ -1,4 +1,4 @@
-# Thankam Girija Angular Training 
+# Angular Training 
 
 ## Info(04/08/2019)
 
