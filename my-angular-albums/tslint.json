@@ -67,7 +67,9 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "quotemark":false
+    "quotemark":false,
+    "no-trailing-whitespace":false
+
 
   }
 }
