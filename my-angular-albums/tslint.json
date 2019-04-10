@@ -68,7 +68,8 @@
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "quotemark":false,
-    "no-trailing-whitespace":false
+    "no-trailing-whitespace":false,
+    "comment-format":false
 
 
   }
