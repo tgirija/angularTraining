@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AlbumListComponent } from './albums/album-list.component';
 import { AlbumCardComponent } from './albums/album-card/album-card.component';
+import { ReverseStrPipe } from './reverse-str.pipe';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumListComponent,
-    AlbumCardComponent
+    AlbumCardComponent,
+    ReverseStrPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Album } from "./albums/album.model";
+import { ReverseStrPipe } from './reverse-str.pipe';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,12 @@ import { Album } from "./albums/album.model";
 export class AppComponent implements OnInit {
 
   title = 'My Angular Albums';
+
   titleCounter = 1;
   numbers: number[];
 
   ngOnInit(): void {
-    // change detection
+      // change detection
     // create an interval timer, where every 2 seconds,
     // you update the titleCounter by one. After 6 seconds cancel the interval.
     const interval = setInterval(() => this.titleCounter++, 2000);

@@ -1,16 +1,23 @@
-<div class="card" [ngStyle]="{ 'background-color': album.on_sale ? 'green' : '' }">
+<div class="card" >
   <img
       class="card-img-top cover"
       src="assets/img/{{album.id}}.jpg"
       alt="Album cover for {{ album.album_name }}"
       style="border: 1px solid grey"
   />
-  <div class="card-body" (mouseover) = "logName()">
+  <div class="card-body" (mouseover) = "logName()" [ngStyle]="{ 'background-color': album.on_sale ? 'green' : '' }">
     <h4 class="card-title">{{album.artist }}</h4>
     <ul style="list-style: none;">
       <li>{{ album.album_name }}</li>
       <li>Released: {{album.year }}</li>
-      <li>{{ album.price }} {{ album.currency }}</li>
+
+      <li>
+          <span *ngIf="album.on_sale" style="text-decoration:line-through;">
+              {{album.price | number:'1.1-2' | currency:album.currency}}
+            </span>
+            {{ (album.on_sale ? newPrice : album.price) | number:'1.2-2' |
+            currency:album.currency }}
+      </li>
     </ul>
 
     <img

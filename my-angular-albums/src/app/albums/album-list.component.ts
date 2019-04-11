@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Album } from 'src/app/albums/album.model';
 import { ALBUMS } from 'src/app/albums/albums.data';
+import { AlbumService } from './shared/album.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-album-list',
@@ -8,14 +10,19 @@ import { ALBUMS } from 'src/app/albums/albums.data';
   styleUrls: ['./album-list.component.css']
 })
 export class AlbumListComponent implements OnInit {
-  albumsArray: Album[];
+  albumsArray: Observable<Album[]>;
   clickedAlbum: string;
 
-  constructor() { }
+  constructor(private albumService: AlbumService) { }
 
   ngOnInit() {
-    this.albumsArray = this.albumsArray = ALBUMS;
+
+    this.getAlbums();
     console.log(this.albumsArray);
+}
+
+getAlbums() {
+  this.albumsArray = this.albumService.getAlbums();
 }
 
 
