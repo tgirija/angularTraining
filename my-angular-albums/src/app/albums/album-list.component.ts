@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./album-list.component.css']
 })
 export class AlbumListComponent implements OnInit {
-  albumsArray: Observable<Album[]>;
+  albumsArray: Album[];
   clickedAlbum: string;
 
   constructor(private albumService: AlbumService) { }
@@ -22,7 +22,9 @@ export class AlbumListComponent implements OnInit {
 }
 
 getAlbums() {
-  this.albumsArray = this.albumService.getAlbums();
+  this.albumService.getAlbums().subscribe(
+    albums => this.albumsArray = albums,
+    error => console.log("Error: ", error));
 }
 
 
