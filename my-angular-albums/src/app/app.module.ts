@@ -7,6 +7,10 @@ import { AlbumListComponent } from './albums/album-list.component';
 import { AlbumCardComponent } from './albums/album-card/album-card.component';
 import { ReverseStrPipe } from './reverse-str.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { AlbumDetailsComponent } from './albums/album-details/album-details.component';
 
 
 @NgModule({
@@ -14,7 +18,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     AlbumListComponent,
     AlbumCardComponent,
-    ReverseStrPipe
+    ReverseStrPipe,
+    AboutComponent,
+    NavbarComponent,
+    NotfoundComponent,
+    AlbumDetailsComponent
   ],
   imports: [
     BrowserModule,
